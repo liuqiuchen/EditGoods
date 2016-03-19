@@ -1,0 +1,77 @@
+/*初始化*/
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Microsoft Yahei";
+}
+
+html,
+body {
+    height: 100%; /*撑开，占页面的全部高度*/
+}
+
+ul,li{
+    list-style: none;
+}
+
+input {
+    vertical-align: middle;
+}
+
+/*主体内容*/
+#wrap_content {
+    width: 307px;
+    border: 1px solid #cccccc;
+    margin: 50px auto;
+}
+
+#wrap_content input.myText {
+    width: 50px;
+    vertical-align: baseline;
+}
+
+#wrap_content #goods_column,
+#wrap_content #footer {
+    padding: 10px 5px;
+}
+
+#wrap_content #goods_column {
+    border-bottom: 1px solid #cccccc;
+    color: #666;
+}
+
+#wrap_content #goods_list {}
+#wrap_content #goods_list li {
+    padding: 8px 0 8px 5px;
+    display: inline-block;
+}
+
+#wrap_content #footer {
+    border-top: 1px solid #cccccc;
+}
+
+#wrap_content #footer .buttons {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#wrap_content #footer button {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

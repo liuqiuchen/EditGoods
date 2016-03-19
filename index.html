@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!-- 对移动端友好 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>AngularJS编辑商品</title>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div id="wrap_content">
+        <h1 id="goods_column">商品栏</h1>
+        <ul id="goods_list" ng-repeat="x in goods">
+            <li>
+                <input type="checkbox" ng-model="x.bool"/>&nbsp;
+                名称：<input class="myText" type="text" ng-model="x.name"/>&nbsp;
+                价格：<input class="myText" type="text" ng-model="x.price"/>&nbsp;
+                数量x<input class="myText" type="text" ng-model="x.num"/>&nbsp;
+            </li>
+        </ul>
+        <div id="footer">
+            <input type="checkbox"/> 全选
+            <div class="buttons">
+                <button>删除</button>
+                <button>添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/bower_components/angular/angular.min.js"></script>
+
+</body>
+</html>
