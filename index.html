@@ -12,8 +12,8 @@
 <div ng-app="myApp" ng-controller="myCtrl">
     <div id="wrap_content">
         <h1 id="goods_column">商品栏</h1>
-        <ul id="goods_list" ng-repeat="x in goods">
-            <li>
+        <ul id="goods_list">
+            <li ng-repeat="x in goods">
                 <input ng-click="autoSelect()" type="checkbox" ng-model="x.bool"/>&nbsp;
                 名称：<input class="myText" type="text" ng-model="x.name"/>&nbsp;
                 价格：<input class="myText" type="text" ng-model="x.price"/>&nbsp;
@@ -23,10 +23,17 @@
         <div id="footer">
             <input type="checkbox" ng-model="allSelectButton" ng-click="allSelect()"/> 全选
             <div class="buttons">
-                <button>删除</button>
-                <button>添加</button>
+                <button ng-click="deleteGoods()">删除</button>
             </div>
         </div>
+    </div>
+
+    <div id="addInputArea">
+        名称：<input class="myText" type="text" ng-model="newName"/>&nbsp;
+        价格：<input class="myText" type="text" ng-model="newPrice"/>&nbsp;
+        数量x<input class="myText" type="text" ng-model="newNum"/>&nbsp;
+        <br/><br/>
+        <button ng-click="addGoods()">添加</button>
     </div>
 </div>
 

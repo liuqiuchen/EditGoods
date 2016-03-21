@@ -26,7 +26,12 @@ input {
     margin: 50px auto;
 }
 
-#wrap_content input.myText {
+#addInputArea {
+    width: 307px;
+    margin: 15px auto 0 auto;
+}
+
+input.myText {
     width: 50px;
     vertical-align: baseline;
 }

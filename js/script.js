@@ -5,6 +5,7 @@
 var app = angular.module('myApp', []);
 //创建控制器
 app.controller('myCtrl', function ($scope) {
+
     $scope.goods = [
         {bool:false,name:'女装',price:'99.00',num:2},
         {bool:false,name:'男鞋',price:'87.00',num:1},
@@ -54,6 +55,60 @@ app.controller('myCtrl', function ($scope) {
             angular.forEach($scope.goods, function (data,index,array) {
                 data.bool = false;
             });
+        }
+    };
+
+    //添加商品
+    $scope.addGoods = function () {
+        //console.log($scope.newName);
+        //console.log($scope.newPrice);
+        //console.log($scope.newNum);
+
+        if($scope.newName != null && $scope.newName != '' && $scope.newName != 'undefined'
+        && $scope.newPrice != null && $scope.newPrice != '' && $scope.newPrice != 'undefined'
+        && $scope.newNum != null && $scope.newNum != '' && $scope.newNum != 'undefined'
+        ) {
+            $scope.goods.push({bool:false,name:$scope.newName,price:$scope.newPrice,num:$scope.newNum});
+            //清空输入框数据
+            $scope.newName = '';
+            $scope.newPrice = '';
+            $scope.newNum = '';
+        }else {
+            alert('请填写相应数据');
+        }
+    };
+
+    /**删除商品*/
+    var deleteGoods = [];
+    var oldGoodsArr = $scope.goods;
+    $scope.deleteGoods = function () {
+        angular.forEach($scope.goods, function (data,index,arr){
+            //console.log(data.bool);
+
+            if(arr[index].bool) {
+                deleteGoods.push(data.bool + index);
+
+                //$scope.goods.splice(index, 1);
+                //console.log($scope.goods);
+            }
+
+
+        });
+
+        //console.log(deleteGoods);
+
+        for(var n = 0;n < deleteGoods.length;n++){
+            $scope.goods.splice((deleteGoods[n] - 1 -n),1);
+
+            //console.log(deleteGoods[n] - 1);
+        }
+
+        //console.log(deleteGoods.length);
+        //console.log(oldGoodsArr.length);
+
+        if(oldGoodsArr.length == 0) {
+            //alert('aaa');
+            $scope.allSelectButton = false;
         }
     };
 
